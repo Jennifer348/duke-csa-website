@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)file:///Users/jenniferqi/Downloads/duke_csa_website.html#join -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duke CSA — Chinese Students Association</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="./index_files/css2" rel="stylesheet">
+<style>
+  :root {
+    --navy: #012169;
+    --red:  #C84B31;
+    --gold: #D4AF5A;
+    --ink:  #0D0D0D;
+    --mist: #F5F3EF;
+    --mid:  #8A8880;
+    --rule: rgba(1,33,105,0.12);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--mist); color: var(--ink); overflow-x: hidden; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 48px;
+    background: rgba(245,243,239,0.92); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--navy); letter-spacing: -0.02em; }
+  .nav-logo span { color: var(--red); }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a { font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); text-decoration: none; opacity: 0.7; transition: opacity 0.2s; }
+  .nav-links a:hover { opacity: 1; }
+  .nav-cta { background: var(--red); color: #fff; padding: 10px 22px; border-radius: 2px; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; text-decoration: none; transition: background 0.2s; }
+  .nav-cta:hover { background: #a83a22; }
+
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 80px; }
+  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 80px 48px 80px 72px; }
+  .hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); margin-bottom: 28px; display: flex; align-items: center; gap: 12px; animation: fadeUp 0.6s ease both; }
+  .hero-eyebrow::after { content: ''; flex: 1; max-width: 60px; height: 1px; background: var(--red); opacity: 0.5; }
+  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(52px, 6vw, 88px); font-weight: 900; line-height: 0.95; letter-spacing: -0.03em; color: var(--navy); margin-bottom: 32px; animation: fadeUp 0.6s ease 0.1s both; }
+  .hero-title em { font-style: italic; color: var(--red); display: block; }
+  .hero-sub { font-size: 17px; font-weight: 300; line-height: 1.65; color: #3a3a3a; max-width: 420px; margin-bottom: 48px; animation: fadeUp 0.6s ease 0.2s both; }
+  .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; animation: fadeUp 0.6s ease 0.3s both; }
+  .btn-primary { background: var(--navy); color: #fff; padding: 16px 32px; border-radius: 2px; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; text-decoration: none; transition: background 0.2s; display: inline-block; }
+  .btn-primary:hover { background: #01317f; }
+  .btn-ghost { color: var(--navy); border-bottom: 1.5px solid var(--navy); padding-bottom: 2px; font-size: 14px; font-weight: 500; text-decoration: none; letter-spacing: 0.02em; transition: opacity 0.2s; }
+  .btn-ghost:hover { opacity: 0.6; }
+
+  .hero-right { background: var(--navy); display: flex; flex-direction: column; justify-content: flex-end; padding: 60px 56px; position: relative; overflow: hidden; }
+  .hero-pattern { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.04) 39px, rgba(255,255,255,0.04) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.04) 39px, rgba(255,255,255,0.04) 40px); }
+  .hero-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; position: relative; z-index: 1; margin-bottom: 48px; animation: fadeUp 0.7s ease 0.2s both; }
+  .stat-block { border-left: 2px solid var(--gold); padding-left: 18px; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; line-height: 1; color: #fff; letter-spacing: -0.03em; }
+  .stat-label { font-size: 12px; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 6px; }
+  .hero-quote { position: relative; z-index: 1; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 28px; font-family: 'Playfair Display', serif; font-size: 18px; font-style: italic; line-height: 1.5; color: rgba(255,255,255,0.75); animation: fadeUp 0.7s ease 0.35s both; }
+
+  section { padding: 100px 72px; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 4vw, 56px); font-weight: 900; line-height: 1.05; letter-spacing: -0.03em; color: var(--navy); margin-bottom: 20px; }
+
+  .about { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .about-body { font-size: 16px; font-weight: 300; line-height: 1.8; color: #3a3a3a; margin-bottom: 24px; }
+  .about-right { padding-top: 80px; }
+  .pillars { display: flex; flex-direction: column; }
+  .pillar { display: flex; gap: 24px; align-items: flex-start; padding: 28px 0; border-bottom: 1px solid var(--rule); opacity: 0; transform: translateY(16px); transition: opacity 0.5s, transform 0.5s; }
+  .pillar.visible { opacity: 1; transform: translateY(0); }
+  .pillar-num { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--red); padding-top: 4px; min-width: 28px; }
+  .pillar h3 { font-size: 15px; font-weight: 500; color: var(--navy); margin-bottom: 6px; }
+  .pillar p { font-size: 14px; font-weight: 300; line-height: 1.65; color: #555; }
+
+  .alumni-section { background: var(--navy); color: #fff; }
+  .alumni-section .section-label { color: var(--gold); }
+  .alumni-section .section-title { color: #fff; }
+  .alumni-intro { font-size: 16px; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.65); max-width: 560px; margin-bottom: 56px; }
+  .alumni-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 2px; margin-bottom: 56px; }
+  .alumni-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); padding: 28px 24px; transition: background 0.2s; }
+  .alumni-card:hover { background: rgba(255,255,255,0.08); }
+  .alumni-name { font-size: 15px; font-weight: 500; color: #fff; margin-bottom: 4px; }
+  .alumni-class { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gold); letter-spacing: 0.06em; margin-bottom: 12px; }
+  .alumni-role { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.5; }
+  .alumni-company { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.8); }
+  .alumni-cta-block { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
+  .alumni-cta-text { font-family: 'Playfair Display', serif; font-size: 22px; font-style: italic; color: rgba(255,255,255,0.8); max-width: 420px; line-height: 1.4; }
+  .btn-gold { background: var(--gold); color: var(--navy); padding: 16px 32px; border-radius: 2px; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; text-decoration: none; transition: opacity 0.2s; white-space: nowrap; display: inline-block; }
+  .btn-gold:hover { opacity: 0.85; }
+
+  .events-inner { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; }
+  .event-list { display: flex; flex-direction: column; }
+  .event-item { display: flex; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--rule); transition: opacity 0.2s; }
+  .event-item:hover { opacity: 0.7; }
+  .event-date { min-width: 52px; font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; line-height: 1; color: var(--red); letter-spacing: -0.03em; }
+  .event-month { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); display: block; }
+  .event-title { font-size: 15px; font-weight: 500; color: var(--navy); margin-bottom: 4px; }
+  .event-desc { font-size: 13px; font-weight: 300; color: var(--mid); line-height: 1.5; }
+  .events-feature { background: var(--navy); border-radius: 4px; padding: 48px; display: flex; flex-direction: column; justify-content: space-between; min-height: 360px; position: relative; overflow: hidden; }
+  .events-feature-tag { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  .events-feature-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; line-height: 1.15; color: #fff; max-width: 280px; }
+  .events-feature-body { font-size: 14px; font-weight: 300; line-height: 1.65; color: rgba(255,255,255,0.6); max-width: 320px; }
+  .feature-deco { position: absolute; right: -20px; bottom: -20px; width: 160px; height: 160px; border-radius: 50%; background: rgba(212,175,90,0.08); }
+
+  .join { background: #fff; }
+  .join-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .join-body { font-size: 16px; font-weight: 300; line-height: 1.8; color: #3a3a3a; margin-bottom: 32px; }
+  .join-form-block { background: var(--mist); border: 1px solid var(--rule); padding: 40px; border-radius: 4px; }
+  .form-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .form-sub { font-size: 13px; color: var(--mid); margin-bottom: 28px; font-weight: 300; line-height: 1.5; }
+  .form-group { margin-bottom: 16px; }
+  .form-group label { display: block; font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); margin-bottom: 8px; }
+  .form-group input, .form-group select { width: 100%; padding: 12px 16px; border: 1px solid rgba(1,33,105,0.2); border-radius: 2px; background: #fff; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--ink); outline: none; transition: border-color 0.2s; }
+  .form-group input:focus, .form-group select:focus { border-color: var(--navy); }
+  .form-note { font-size: 12px; color: var(--mid); margin-top: 16px; line-height: 1.5; }
+  .btn-submit { width: 100%; background: var(--red); color: #fff; padding: 16px; border: none; border-radius: 2px; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; margin-top: 20px; transition: background 0.2s; }
+  .btn-submit:hover { background: #a83a22; }
+
+  footer { background: var(--ink); color: rgba(255,255,255,0.4); padding: 48px 72px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: #fff; }
+  .footer-logo span { color: var(--red); }
+  .footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
+  .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: rgba(255,255,255,0.8); }
+  .footer-copy { font-size: 12px; width: 100%; text-align: center; margin-top: 8px; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 60px 24px 48px; }
+    .hero-right { display: none; }
+    section { padding: 64px 24px; }
+    .about, .events-inner, .join-inner { grid-template-columns: 1fr; gap: 40px; }
+    .about-right { padding-top: 0; }
+    footer { padding: 40px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Duke <span>CSA</span></div>
+  <ul class="nav-links">
+    <li><a href="file:///Users/jenniferqi/Downloads/duke_csa_website.html#about">About</a></li>
+    <li><a href="file:///Users/jenniferqi/Downloads/duke_csa_website.html#alumni">Alumni</a></li>
+    <li><a href="file:///Users/jenniferqi/Downloads/duke_csa_website.html#events">Events</a></li>
+    <li><a href="file:///Users/jenniferqi/Downloads/duke_csa_website.html#join">Join</a></li>
+  </ul>
+  <a href="file:///Users/jenniferqi/Downloads/duke_csa_website.html#join" class="nav-cta">Get Involved</a>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Duke University · Durham, NC</div>
+    <h1 class="hero-title">Chinese Students<br><em>Association</em></h1>
+    <p class="hero-sub">A home for Duke's Chinese student community — connecting students, fostering leadership, and building a network that extends far beyond campus.</p>
+    <div class="hero-actions">
+      <a href="file:///Users/jenniferqi/Downloads/duke_csa_website.html#join" class="btn-primary">Join CSA</a>
+      <a href="file:///Users/jenniferqi/Downloads/duke_csa_website.html#alumni" class="btn-ghost">Meet our alumni →</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-pattern"></div>
+    <div class="hero-stat-grid">
+      <div class="stat-block"><div class="stat-num">200+</div><div class="stat-label">Active members</div></div>
+      <div class="stat-block"><div class="stat-num">15+</div><div class="stat-label">Years of history</div></div>
+      <div class="stat-block"><div class="stat-num">30+</div><div class="stat-label">Alumni companies</div></div>
+      <div class="stat-block"><div class="stat-num">6</div><div class="stat-label">Annual events</div></div>
+    </div>
+    <div class="hero-quote">"The place I found community, mentors, and lifelong friends at Duke."</div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about">
+    <div class="about-left">
+      <div class="section-label">Who we are</div>
+      <h2 class="section-title">More than a student org</h2>
+      <p class="about-body">Duke CSA is the hub for Chinese students across all schools and programs at Duke University. We bring together undergrads, grad students, and professional students through cultural events, career programming, and a tight-knit community.</p>
+      <p class="about-body">Whether you're navigating campus life, looking for internship advice, or just want to celebrate Lunar New Year with people who get it — CSA is where you belong.</p>
+      <a href="file:///Users/jenniferqi/Downloads/duke_csa_website.html#join" class="btn-primary" style="margin-top:8px">Become a member</a>
+    </div>
+    <div class="about-right">
+      <div class="pillars">
+        <div class="pillar visible"><span class="pillar-num">01</span><div><h3>Community</h3><p>A welcoming space for every Chinese student at Duke — from freshmen to PhD candidates.</p></div></div>
+        <div class="pillar visible"><span class="pillar-num">02</span><div><h3>Career &amp; Networking</h3><p>Direct access to alumni in finance, tech, consulting, medicine, and academia.</p></div></div>
+        <div class="pillar visible"><span class="pillar-num">03</span><div><h3>Culture</h3><p>Celebrating Chinese culture through food, festivals, performances, and shared traditions.</p></div></div>
+        <div class="pillar visible"><span class="pillar-num">04</span><div><h3>Leadership</h3><p>Developing the next generation of leaders through our elected board and committee structure.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="alumni" class="alumni-section">
+  <div class="section-label">Our network</div>
+  <h2 class="section-title">Where our alumni are</h2>
+  <p class="alumni-intro">Our alumni are at the world's leading companies and institutions. This directory is actively maintained by CSA — if you're an alumnus, add yourself and give back to the next generation.</p>
+  <div class="alumni-grid">
+    <div class="alumni-card"><div class="alumni-name">Sarah Chen</div><div class="alumni-class">CLASS OF 2023</div><div class="alumni-company">Goldman Sachs</div><div class="alumni-role">Investment Banking Analyst · NYC</div></div>
+    <div class="alumni-card"><div class="alumni-name">Kevin Liu</div><div class="alumni-class">CLASS OF 2022</div><div class="alumni-company">Google</div><div class="alumni-role">Software Engineer · Mountain View</div></div>
+    <div class="alumni-card"><div class="alumni-name">Michelle Zhang</div><div class="alumni-class">CLASS OF 2021</div><div class="alumni-company">McKinsey &amp; Company</div><div class="alumni-role">Associate · San Francisco</div></div>
+    <div class="alumni-card"><div class="alumni-name">James Wang</div><div class="alumni-class">CLASS OF 2024</div><div class="alumni-company">Citadel</div><div class="alumni-role">Quantitative Researcher · Chicago</div></div>
+    <div class="alumni-card"><div class="alumni-name">Amy Zhou</div><div class="alumni-class">CLASS OF 2020</div><div class="alumni-company">Duke Medical School</div><div class="alumni-role">MD Candidate · Durham</div></div>
+    <div class="alumni-card" style="border:1px dashed rgba(255,255,255,0.2);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:12px;">
+      <div style="font-size:28px;color:rgba(255,255,255,0.25);">+</div>
+      <div class="alumni-role">Alumni? Add yourself<br>to the directory.</div>
+      <a href="https://forms.gle/YOUR_FORM_LINK" target="_blank" class="btn-gold" style="padding:10px 20px;font-size:12px;">Submit your info</a>
+    </div>
+  </div>
+  <div class="alumni-cta-block">
+    <div class="alumni-cta-text">"Knowing CSA alumni were out there made every cold message feel a little warmer."</div>
+    <a href="https://forms.gle/YOUR_FORM_LINK" target="_blank" class="btn-gold">Alumni — Add yourself →</a>
+  </div>
+</section>
+
+<section id="events">
+  <div class="events-inner">
+    <div>
+      <div class="section-label">Stay connected</div>
+      <h2 class="section-title">Upcoming events</h2>
+      <div class="event-list">
+        <div class="event-item"><div class="event-date">15<span class="event-month">Feb</span></div><div><div class="event-title">Lunar New Year Gala</div><div class="event-desc">Annual celebration with performances, dinner, and the whole community.</div></div></div>
+        <div class="event-item"><div class="event-date">08<span class="event-month">Mar</span></div><div><div class="event-title">Alumni Career Panel</div><div class="event-desc">Alumni across finance, tech, and consulting share their paths.</div></div></div>
+        <div class="event-item"><div class="event-date">22<span class="event-month">Mar</span></div><div><div class="event-title">Spring Networking Night</div><div class="event-desc">Meet current members and alumni in an informal setting.</div></div></div>
+        <div class="event-item"><div class="event-date">19<span class="event-month">Apr</span></div><div><div class="event-title">End-of-Year Celebration</div><div class="event-desc">Farewell to seniors, board elections, and community banquet.</div></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="events-feature">
+        <div class="feature-deco"></div>
+        <div><div class="events-feature-tag">Flagship event · Feb 2026</div><h3 class="events-feature-title">Lunar New Year Gala</h3></div>
+        <div class="events-feature-body">Our biggest event of the year. Hundreds of students, families, and alumni gather to celebrate, connect, and kick off the new year together. This is Duke CSA at its best.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="join" class="join">
+  <div class="join-inner">
+    <div>
+      <div class="section-label">Get involved</div>
+      <h2 class="section-title">Join the community</h2>
+      <p class="join-body">Membership is open to all Duke students. Whether you're a first-year finding your footing or a senior looking to give back, there's a place for you in CSA.</p>
+      <p class="join-body">Follow us on Instagram <strong>@dukecsa</strong> and WeChat for event updates, or sign up below to stay in the loop.</p>
+    </div>
+    <div class="join-form-block">
+      <div class="form-title">Stay in the loop</div>
+      <div class="form-sub">Takes 30 seconds. No spam — just event announcements and opportunities.</div>
+      <div class="form-group"><label>Full Name</label><input type="text" placeholder="Your name"></div>
+      <div class="form-group"><label>Duke Email</label><input type="email" placeholder="netid@duke.edu"></div>
+      <div class="form-group"><label>Class Year</label><select><option value="">Select year</option><option>2025</option><option>2026</option><option>2027</option><option>2028</option><option>Graduate student</option></select></div>
+      <div class="form-group"><label>School / Program</label><select><option value="">Select program</option><option>Trinity College of Arts &amp; Sciences</option><option>Pratt School of Engineering</option><option>Fuqua School of Business</option><option>School of Medicine</option><option>Other</option></select></div>
+      <button class="btn-submit" onclick="alert(&#39;Thank you! We will be in touch.&#39;)">Sign Me Up</button>
+      <div class="form-note">Your information is only used for CSA communications and never shared with third parties.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Duke <span>CSA</span></div>
+  <div class="footer-links">
+    <a href="file:///Users/jenniferqi/Downloads/duke_csa_website.html#about">About</a>
+    <a href="file:///Users/jenniferqi/Downloads/duke_csa_website.html#alumni">Alumni</a>
+    <a href="file:///Users/jenniferqi/Downloads/duke_csa_website.html#events">Events</a>
+    <a href="file:///Users/jenniferqi/Downloads/duke_csa_website.html#join">Join</a>
+    <a href="https://instagram.com/dukecsa" target="_blank">Instagram</a>
+    <a href="https://linkedin.com/company/duke-csa" target="_blank">LinkedIn</a>
+  </div>
+  <div class="footer-copy">© 2026 Duke Chinese Students Association · Durham, NC</div>
+</footer>
+
+<script>
+  const pillars = document.querySelectorAll('.pillar');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 120); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  pillars.forEach(p => obs.observe(p));
+</script>
+
+
+</body></html>
