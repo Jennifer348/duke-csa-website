@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Duke CSA — Chinese Students Association</title>
+  <title>Join | Duke CSA</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
     <li><a href="exec.html" data-en="Exec" data-zh="执行团队">Exec</a></li>
     <li><a href="alumni.html" data-en="Alumni" data-zh="校友">Alumni</a></li>
     <li><a href="events.html" data-en="Events" data-zh="活动">Events</a></li>
-    <li><a href="join.html" data-en="Join" data-zh="加入">Join</a></li>
+    <li><a href="join.html" class="active" data-en="Join" data-zh="加入">Join</a></li>
   </ul>
   <a href="join.html" class="nav-cta" data-en="Get Involved" data-zh="参与我们">Get Involved</a>
   <button class="hamburger" aria-label="Open menu" aria-expanded="false">
@@ -41,31 +41,23 @@
   <a href="join.html" class="mobile-cta" data-en="Get Involved" data-zh="参与我们">Get Involved</a>
 </div>
 
-<section class="hero" id="home">
-  <div class="hero-left">
-    <div class="hero-logo-mobile">
-      <img src="logo.png" alt="Duke CSA Logo">
+<section class="join" style="padding-top: 160px; min-height: 100vh;">
+  <div class="join-inner">
+    <div>
+      <div class="section-label" data-en="Get involved" data-zh="参与我们">Get involved</div>
+      <h2 class="section-title" data-en="Join the community" data-zh="加入社区">Join the community</h2>
+      <p class="join-body" data-en="Membership is open to all Duke students. Whether you're a first-year finding your footing or a senior looking to give back, there's a place for you in CSA." data-zh="会员资格向所有杜克学生开放。无论你是正在适应的大一新生，还是想要回馈的大四学生，CSA都有你的位置。">Membership is open to all Duke students. Whether you're a first-year finding your footing or a senior looking to give back, there's a place for you in CSA.</p>
+      <p class="join-body" data-en="Follow us on Instagram <strong>@duke_csa</strong> for event updates, or sign up below to stay in the loop." data-zh="关注我们的 Instagram <strong>@duke_csa</strong> 和微信公众号 <strong>杜克CSA</strong> 获取活动更新，或在下方注册以保持联系。">Follow us on Instagram <strong>@duke_csa</strong> for event updates, or sign up below to stay in the loop.</p>
     </div>
-    <div class="hero-eyebrow">Duke University · Durham, NC</div>
-    <h1 class="hero-title" data-en="Chinese Students<br><em>Association</em>" data-zh="中国学生<br><em>联合会</em>">Chinese Students<br><em>Association</em></h1>
-    <p class="hero-sub" data-en="A home for Duke's Chinese undergraduate community — connecting students, fostering leadership, and building a network that extends far beyond campus." data-zh="杜克中国本科生社区之家——连接学生、培养领导力、建立延伸至校园之外的人际网络。">A home for Duke's Chinese undergraduate community — connecting students, fostering leadership, and building a network that extends far beyond campus.</p>
-    <div class="hero-actions">
-      <a href="join.html" class="btn-primary" data-en="Join CSA" data-zh="加入 CSA">Join CSA</a>
-      <a href="alumni.html" class="btn-ghost" data-en="Meet our alumni →" data-zh="认识我们的校友 →">Meet our alumni →</a>
+    <div class="join-form-block">
+      <div class="form-title" data-en="Stay in the loop" data-zh="保持联系" style="margin-bottom: 28px;">Stay in the loop</div>
+      <div class="form-group"><label data-en="Full Name" data-zh="姓名">Full Name</label><input type="text" placeholder="Your name"></div>
+      <div class="form-group"><label data-en="Duke Email" data-zh="杜克邮箱">Duke Email</label><input type="email" placeholder="netid@duke.edu"></div>
+      <div class="form-group"><label data-en="Class Year" data-zh="届别">Class Year</label><select><option value="" data-en="Select year" data-zh="选择届别">Select year</option><option>2026</option><option>2027</option><option>2028</option><option>2029</option><option data-en="Graduate student" data-zh="研究生">Graduate student</option></select></div>
+      <div class="form-group"><label data-en="School / Program" data-zh="学院/项目">School / Program</label><select><option value="" data-en="Select program" data-zh="选择项目">Select program</option><option>Trinity College of Arts & Sciences</option><option>Pratt School of Engineering</option><option>Fuqua School of Business</option><option>School of Medicine</option><option data-en="Other" data-zh="其他">Other</option></select></div>
+      <button class="btn-submit" onclick="alert('Thank you! We will be in touch.')" data-en="Sign Me Up" data-zh="注册">Sign Me Up</button>
+      <div class="form-note" data-en="Your information is only used for CSA communications and never shared with third parties." data-zh="您的信息仅用于CSA通讯，绝不与第三方共享。">Your information is only used for CSA communications and never shared with third parties.</div>
     </div>
-  </div>
-  <div class="hero-right">
-    <div class="hero-pattern"></div>
-    <div class="hero-logo">
-      <img src="logo.png" alt="Duke CSA Logo">
-    </div>
-    <div class="hero-stat-grid">
-      <div class="stat-block"><div class="stat-num">80+</div><div class="stat-label" data-en="Active members" data-zh="活跃成员">Active members</div></div>
-      <div class="stat-block"><div class="stat-num">10+</div><div class="stat-label" data-en="Years of history" data-zh="年历史">Years of history</div></div>
-      <div class="stat-block"><div class="stat-num">30+</div><div class="stat-label" data-en="Alumni companies" data-zh="校友公司">Alumni companies</div></div>
-      <div class="stat-block"><div class="stat-num">6</div><div class="stat-label" data-en="Annual events" data-zh="年度活动">Annual events</div></div>
-    </div>
-    <div class="hero-quote" data-en=""The place I found community, mentors, and lifelong friends at Duke."" data-zh=""在杜克，这里是我找到社区、导师和终身挚友的地方。"">"The place I found community, mentors, and lifelong friends at Duke."</div>
   </div>
 </section>
 

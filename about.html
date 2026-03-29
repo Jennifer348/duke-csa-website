@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Duke CSA — Chinese Students Association</title>
+  <title>About | Duke CSA</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
     </button>
   </div>
   <ul class="nav-links">
-    <li><a href="about.html" data-en="About" data-zh="关于">About</a></li>
+    <li><a href="about.html" class="active" data-en="About" data-zh="关于">About</a></li>
     <li><a href="exec.html" data-en="Exec" data-zh="执行团队">Exec</a></li>
     <li><a href="alumni.html" data-en="Alumni" data-zh="校友">Alumni</a></li>
     <li><a href="events.html" data-en="Events" data-zh="活动">Events</a></li>
@@ -41,31 +41,23 @@
   <a href="join.html" class="mobile-cta" data-en="Get Involved" data-zh="参与我们">Get Involved</a>
 </div>
 
-<section class="hero" id="home">
-  <div class="hero-left">
-    <div class="hero-logo-mobile">
-      <img src="logo.png" alt="Duke CSA Logo">
+<div class="page-hero">
+  <div class="section-label" data-en="Who we are" data-zh="关于我们">Who we are</div>
+  <h1 class="section-title" data-en="More than a student org" data-zh="不止是一个学生社团">More than a student org</h1>
+  <p class="page-hero-sub" data-en="Building community, culture, and connections for Duke's Chinese undergraduate students." data-zh="为杜克中国本科生建立社区、文化和人脉。">Building community, culture, and connections for Duke's Chinese undergraduate students.</p>
+</div>
+
+<section id="about" style="padding-top: 40px;">
+  <div style="max-width: 700px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 56px;">
+      <a href="join.html" class="btn-primary" data-en="Become a member" data-zh="成为会员">Become a member</a>
     </div>
-    <div class="hero-eyebrow">Duke University · Durham, NC</div>
-    <h1 class="hero-title" data-en="Chinese Students<br><em>Association</em>" data-zh="中国学生<br><em>联合会</em>">Chinese Students<br><em>Association</em></h1>
-    <p class="hero-sub" data-en="A home for Duke's Chinese undergraduate community — connecting students, fostering leadership, and building a network that extends far beyond campus." data-zh="杜克中国本科生社区之家——连接学生、培养领导力、建立延伸至校园之外的人际网络。">A home for Duke's Chinese undergraduate community — connecting students, fostering leadership, and building a network that extends far beyond campus.</p>
-    <div class="hero-actions">
-      <a href="join.html" class="btn-primary" data-en="Join CSA" data-zh="加入 CSA">Join CSA</a>
-      <a href="alumni.html" class="btn-ghost" data-en="Meet our alumni →" data-zh="认识我们的校友 →">Meet our alumni →</a>
+    <div class="pillars">
+      <div class="pillar visible"><span class="pillar-num">01</span><div><h3 data-en="Community" data-zh="社区">Community</h3><p data-en="A welcoming space for every Chinese undergraduate student at Duke — from freshmen to seniors." data-zh="为杜克每一位中国本科生提供温馨团结的社区——从大一新生到大四学长学姐。">A welcoming space for every Chinese undergraduate student at Duke — from freshmen to seniors.</p></div></div>
+      <div class="pillar visible"><span class="pillar-num">02</span><div><h3 data-en="Career & Networking" data-zh="职业与社交">Career & Networking</h3><p data-en="Direct access to alumni in finance, tech, consulting, medicine, and academia." data-zh="直接接触金融、科技、咨询、医学和学术界的校友。">Direct access to alumni in finance, tech, consulting, medicine, and academia.</p></div></div>
+      <div class="pillar visible"><span class="pillar-num">03</span><div><h3 data-en="Culture" data-zh="文化">Culture</h3><p data-en="Celebrating Chinese culture through food, festivals, performances, and shared traditions." data-zh="通过美食、节日、表演和共同的传统庆祝中华文化。">Celebrating Chinese culture through food, festivals, performances, and shared traditions.</p></div></div>
+      <div class="pillar visible"><span class="pillar-num">04</span><div><h3 data-en="Leadership" data-zh="领导力">Leadership</h3><p data-en="Developing the next generation of leaders through our elected board and committee structure." data-zh="通过选举产生的执行团队和委员会结构培养下一代领袖。">Developing the next generation of leaders through our elected board and committee structure.</p></div></div>
     </div>
-  </div>
-  <div class="hero-right">
-    <div class="hero-pattern"></div>
-    <div class="hero-logo">
-      <img src="logo.png" alt="Duke CSA Logo">
-    </div>
-    <div class="hero-stat-grid">
-      <div class="stat-block"><div class="stat-num">80+</div><div class="stat-label" data-en="Active members" data-zh="活跃成员">Active members</div></div>
-      <div class="stat-block"><div class="stat-num">10+</div><div class="stat-label" data-en="Years of history" data-zh="年历史">Years of history</div></div>
-      <div class="stat-block"><div class="stat-num">30+</div><div class="stat-label" data-en="Alumni companies" data-zh="校友公司">Alumni companies</div></div>
-      <div class="stat-block"><div class="stat-num">6</div><div class="stat-label" data-en="Annual events" data-zh="年度活动">Annual events</div></div>
-    </div>
-    <div class="hero-quote" data-en=""The place I found community, mentors, and lifelong friends at Duke."" data-zh=""在杜克，这里是我找到社区、导师和终身挚友的地方。"">"The place I found community, mentors, and lifelong friends at Duke."</div>
   </div>
 </section>
 
@@ -93,6 +85,15 @@
     hamburger.setAttribute('aria-expanded', open);
     document.body.style.overflow = open ? 'hidden' : '';
   });
+</script>
+<script>
+  const pillars = document.querySelectorAll('.pillar');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 120); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  pillars.forEach(p => obs.observe(p));
 </script>
 </body>
 </html>
